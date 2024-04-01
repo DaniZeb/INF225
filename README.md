@@ -1,9 +1,10 @@
-# Grupo 7
-Este es el repositorio del *Grupo 7*, cuyos integrantes son:
+# Grupo 15
+Este es el repositorio del *Grupo 15*, cuyos integrantes son:
 * Nicolas Barahona
 * Maximiliano Bardi
 * Javiera Osorio
-* **Tutor**: Rodrigo Ramírez
+* Daniel Zeballos
+* **Tutor**: Tabby Ahumada
 
 ## Wiki
 Para poder ir a la wiki clickea [aquí](https://github.com/Zurickata/INF236-2023-2-GRUPO-7/wiki)
