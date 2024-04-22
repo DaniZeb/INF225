@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './css/calendario.css';
 import { Link } from 'react-router-dom';
+
 const HoraSelector = ({ hora, setHora }) => {
   const handleChange = event => {
     setHora(event.target.value);
@@ -23,7 +24,6 @@ const HoraSelector = ({ hora, setHora }) => {
       <option value="18:00">18:00</option>
       <option value="19:00">19:00</option>
       <option value="20:00">20:00</option>
-     
     </select>
   );
 };
@@ -34,6 +34,15 @@ const Calendario = () => {
   const [nombre, setNombre] = useState('');
   const [horaSeleccionada, setHoraSeleccionada] = useState('08:00');
   const [horaHabilitada, setHoraHabilitada] = useState(false);
+  const [paciente, setPaciente] = useState({});
+
+  useEffect(() => {
+    // Recupera los datos del paciente del almacenamiento local del navegador
+    const pacienteGuardado = localStorage.getItem('paciente');
+    if (pacienteGuardado) {
+      setPaciente(JSON.parse(pacienteGuardado));
+    }
+  }, []);
 
   const abrirCalendario = () => {
     setMostrarCalendario(true);
@@ -42,6 +51,7 @@ const Calendario = () => {
   const cerrarCalendario = () => {
     setMostrarCalendario(false);
   };
+  
   const onChangeFecha = newDate => {
     setDate(newDate);
     setHoraHabilitada(true);
@@ -50,16 +60,36 @@ const Calendario = () => {
     const monthNumber = newDate.getMonth() + 1; 
     const yearNumber = newDate.getFullYear();
   
-  
     const formattedDate = `${yearNumber}-${monthNumber.toString().padStart(2, '0')}-${dayNumber.toString().padStart(2, '0')}`;
   
-   
     setNombre(formattedDate);
   };
   
-
   const onChangeHora = hora => {
     setHoraSeleccionada(hora);
+  };
+
+  const agendarFecha = () => {
+    const datosPaciente = {
+      ...paciente,
+      fecha: nombre, // Esto es la fecha seleccionada en el calendario
+      hora: horaSeleccionada, // Esto es la hora seleccionada
+    };
+
+    fetch('http://localhost:5000/api/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(datosPaciente),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   };
 
   return (
@@ -95,10 +125,8 @@ const Calendario = () => {
         </div>
         <div className="bot" id="bot">
           <Link to="/">
-            <input type="submit" className="button1" value="Agendar fecha" />
-      
+            <input type="submit" className="button1" value="Agendar fecha" onClick={agendarFecha} />
           </Link>
-          
         </div>
       </div>
     </div>

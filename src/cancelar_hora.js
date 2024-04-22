@@ -2,35 +2,41 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/cancelar_hora.css';
 import { Link } from 'react-router-dom';
+
+
 function CancelarHora() {
-  const [nombre, setNombre] = useState("");
   const [rut, setRut] = useState("");
   const [examen, setExamen] = useState("");
-  const [medico, setMedico] = useState("");
-  const [motivo, setMotivo] = useState("");
 
   const navigate = useNavigate(); 
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const cancelarHora = () => {
+    fetch(`http://localhost:5000/api/users/${rut}`, {
+      method: 'DELETE',
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      navigate('/'); // Navega a menu.js
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  };
 
+  const cambiarHora = () => {
+    // Guarda los datos del paciente en el almacenamiento local del navegador
+    localStorage.setItem('paciente', JSON.stringify({ rut, examen }));
     navigate('/calendario');
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="cuadritop" id="cuadradito">
       <div>
         <h1 className="h1">MODIFICAR HORA</h1>
 
         <div className="casilla1-2"> 
-          <div className="opciones"> 
-
-            <label>
-              Nombre del paciente<br></br>
-              <input type="text" className="casilla11" value={nombre} onChange={e => setNombre(e.target.value)} />
-            </label>
-          </div>
           <div className="opcion">
             <label>
               RUT<br></br>
@@ -51,39 +57,15 @@ function CancelarHora() {
               </select>
             </label>
           </div>
-          <div className="opciones2">
-            <label>
-              Médico derivante<br></br>
-              <select className="casilla11" value={medico} onChange={e => setMedico(e.target.value)}>
-                <option value="Nada"></option>
-                <option value="Nicolás Barahona">Nicolás Barahona</option>
-                <option value="Maximiliano Bardi">Maximiliano Bardi</option>
-                <option value="Javiera Osorio">Javiera Osorio</option>
-              </select>
-            </label>
-          </div>
         </div>
 
         <br></br><br></br>
-        
-        <div className="opciones3">
-          <label>
-            Motivo de cancelacion
-            <br></br>
-            <textarea className="casilla11" value={motivo} onChange={e => setMotivo(e.target.value)} />
-          </label>
-        </div>
-
-        <br></br><br></br>
-        <div class= "boto" id = "boto">
-            <input type="submit" className="button1" value="conseguir otra hora" />
+        <div class= "boton2" id = "boton2">
+            <input type="button" className="button1" value="cancelar hora" onClick={cancelarHora} />
         </div>
         <br></br><br></br>
         <div class= "boton2" id = "boton2">
-          <Link to="/">
-            <input type="submit" className="button1" value="cancelar hora" />
-      
-          </Link>
+            <input type="button" className="button1" value="cambiar hora" onClick={cambiarHora} />
         </div>
       
       </div>

@@ -9,6 +9,8 @@ import DatosPersonales from './datosper.js';
 import DatosPaciente from './datospaciente.js';
 import Examenes from './examenes.js';
 import Agendado from './Horas_agendadas.js';
+import Login from './Login.jsx';
+import SignUp from './SignUp.jsx';
 
 const AppRouter = () => {
   return (
@@ -21,6 +23,8 @@ const AppRouter = () => {
         <Route path="/datospersonales" element={<DatosPersonales />} />
         <Route path="/examenes" element={<Examenes />} />
         <Route path="/Horas-Agendadas" element={<Agendado />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/SignUp' element={<SignUp />} />
 
         <Route path="/cancelar-hora" element={<CancelarHora />} />
         <Route path="/calendario" element={<Calendario/>}/>

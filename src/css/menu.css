@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; /* Agregar box-sizing para un mejor manejo del espacio */
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 .html{
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(imagen.jpg);

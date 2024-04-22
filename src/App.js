@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import { useNavigate } from 'react-router-dom';
 import './css/App.css';
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function App() {
   const [nombre, setNombre] = useState("");
@@ -13,12 +14,13 @@ function App() {
   const navigate = useNavigate(); 
   const handleSubmit = (event) => {
       event.preventDefault();
+      // Guarda los datos del paciente en el almacenamiento local del navegador
+      localStorage.setItem('paciente', JSON.stringify({ nombre, rut, examen, medico, motivo }));
       navigate('/calendario');
   };
 
   return (
     <div className="main-container">
-      
       <form onSubmit={handleSubmit}>
         <div className="cuadrito" id="cuadradito">
           <h1 className="h1">REGISTRO DE PACIENTE</h1>
@@ -77,4 +79,4 @@ function App() {
     </div>      
   );
 }
-export default App;
+export default App

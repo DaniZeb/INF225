@@ -17,10 +17,16 @@ function Menu() {
     <form onSubmit={handleSubmit}>
       <div className="cuadri">
         <div className='contenido'>
-          <h1>Menú</h1>
-          <p>Selecciona lo que quieres hacer hoy</p>
+          <h1>Bienvenido al Sistema de Gestión de Imagenología</h1>
+          <p>Por favor, inicia sesión para comenzar a gestionar tus horas</p>
           <div className="botones">
-            <Link to="/App">
+            <Link to="/login">
+              <button className="button1" >Iniciar Sesión</button>
+            </Link>
+            <Link to="/SignUp">
+              <button className="button1" >Registrarse</button>
+            </Link>
+            {/* <Link to="/App">
               <button className="button1" >Registrar hora</button>
             </Link>
             <Link to="/cancelar-hora">
@@ -28,7 +34,7 @@ function Menu() {
             </Link>
             <Link to="/Identificacion">
               <button className="button1" >Obtener datos del paciente</button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
