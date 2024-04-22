@@ -7,7 +7,10 @@ Este es el repositorio del *Grupo 15*, cuyos integrantes son:
 * **Tutor**: Tabby Ahumada
 
 ## Wiki (Proyecto Anterior)
-Para poder ir a la wiki clickea [aquí](https://github.com/Zurickata/INF236-2023-2-GRUPO-7/wiki)
+Para poder ir a la wiki del semestre pasado clickea [aquí](https://github.com/Zurickata/INF236-2023-2-GRUPO-7/wiki)
+
+## Wiki (Proyecto Actual)
+Para poder ir a la wiki de este semestre clickea [aquí](https://github.com/barahona-nico/INF225-2024-1-GRUPO-15/wiki)
 
 ## Aspectos técnicos relevantes (Proyecto Anterior)
 Mern Stack code for the [Mern Tutorial](https://www.mongodb.com/languages/mern-stack-tutorial)
