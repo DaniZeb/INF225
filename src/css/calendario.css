@@ -7,13 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 
-html {
-    background-color: #ffffff; 
-    font-family:'Noto Serif Balinese', serif;
-    height: 100%;
-    margin: 0;
-    
-  }
+
 .cuadrado {
     background-color: #E9EAEE; 
     border-radius: 30px;

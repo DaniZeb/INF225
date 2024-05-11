@@ -3,7 +3,7 @@ import Navbar from '../../../Components/navbar';
 import React, { useEffect, useState } from 'react';
 import { UserRoundPlus, ArrowBigRightDash} from 'lucide-react';
 
-function LoginFunc({ onLogin, onError }) {
+function RegisterPac({ onLogin, onError }) {
   const [navbarBackground, setNavbarBackground] = useState(false);
 
   useEffect(() => {
@@ -24,6 +24,7 @@ function LoginFunc({ onLogin, onError }) {
   }, []);
   
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
@@ -33,7 +34,7 @@ function LoginFunc({ onLogin, onError }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, name, password }),
       });
 
       const data = await response.json();
@@ -69,20 +70,33 @@ function LoginFunc({ onLogin, onError }) {
         <div class="w-full bg-orange-200 rounded-lg  dark:border md:mt-0 sm:max-w-md xl:p-0 shadow-xl dark:bg-gray-50 dark:border-gray-50">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-blue-300">
-                  Registrate a tu cuenta de Paciente
+                  Registrate a tu cuenta de paciente
               </h1>
+
+              <div>
+                <label htmlFor="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-blue-300">Nombre </label>
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-300 dark:border-gray-100 dark:placeholder-gray-100 dark:text-white dark:focus:ring-blue-100 dark:focus:border-blue-200"
+                  placeholder="Ingrese su nombre"
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
             
               <div>
-  <label htmlFor="Rut" class="block mb-2 text-sm font-medium text-gray-900 dark:text-blue-300">Rut</label>
-  <input
-    type="text"
-    id="rut"
-    value={email}
-    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-300 dark:border-gray-100 dark:placeholder-gray-100 dark:text-white dark:focus:ring-blue-100 dark:focus:border-blue-200"
-    placeholder="Ingrese su Rut"
-    onChange={(e) => setEmail(e.target.value)}
-  />
-</div>
+                <label htmlFor="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-blue-300">Email</label>
+                <input
+                  type="text"
+                  id="email"
+                  value={email}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-300 dark:border-gray-100 dark:placeholder-gray-100 dark:text-white dark:focus:ring-blue-100 dark:focus:border-blue-200"
+                  placeholder="Ingrese su email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              
                   <div>
                       <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-blue-300">Contraseña</label>
                       <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-200 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-300 dark:border-gray-100 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-100 dark:focus:border-blue-200" required=""/>
@@ -132,5 +146,4 @@ function LoginFunc({ onLogin, onError }) {
     </div>
   );
 }
-
-export default LoginFunc;
+export default RegisterPac;

@@ -1,23 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Agregar box-sizing para un mejor manejo del espacio */
-  /* font-family: sans-serif; */
-}
-.html{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(imagen.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
 
-}
+
 
 .cuadri {
   height: 100vh; /* Ajustar el tamaño al 100% del viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(imagen.jpg);
+  
   background-size: cover;
   background-position: center;
 }
@@ -64,17 +53,7 @@
 body:not(.cuadri) { 
 
   font-family: sans-serif;
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(imagen.jpg);
-  background-size: cover;
-  background-position: center;
-}
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(imagen.jpg);
+
   background-size: cover;
   background-position: center;
 }
