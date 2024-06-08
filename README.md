@@ -27,3 +27,4 @@ Mern Stack code for the [Mern Tutorial](https://www.mongodb.com/languages/mern-s
 
 * Si por lo que sea nada de lo anteriormente mencionado funciona, aquí hay un link a un drive con el zip entero: https://drive.google.com/file/d/10n5x7rgijfICT-9p2vadydH3bnbH5tD8/view?usp=sharing
 * [Evaluación de arquitectura](https://docs.google.com/document/d/1CXCU5Wh42TRMwKF40OchyzA2lsCH5va2Wj4nmTGDAZQ/edit?usp=sharing)
+* [Vídeo hito 4](https://youtu.be/7pD4rP9VyFQ)
