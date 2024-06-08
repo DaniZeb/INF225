@@ -26,3 +26,4 @@ Mern Stack code for the [Mern Tutorial](https://www.mongodb.com/languages/mern-s
 * Posterior a lo anterior, se pide utilizar en una terminal un "cd server" (para estar dentro de la carpeta del servidor" y posterior a esto utilizar "npm nodemon" y luego para ejecutar la base de datos, insertar "npm run start". En caso de no funcionar, escriba "npm run dev", a priori el el anterior es mejor por temas de velociad. 
 
 * Si por lo que sea nada de lo anteriormente mencionado funciona, aquí hay un link a un drive con el zip entero: https://drive.google.com/file/d/10n5x7rgijfICT-9p2vadydH3bnbH5tD8/view?usp=sharing
+* [Evaluación de arquitectura](https://docs.google.com/document/d/1CXCU5Wh42TRMwKF40OchyzA2lsCH5va2Wj4nmTGDAZQ/edit?usp=sharing)
