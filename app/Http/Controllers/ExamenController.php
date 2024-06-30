@@ -67,4 +67,13 @@ class ExamenController extends Controller
 
         return response()->json(['message' => 'Deleted successfully'], 200);
     }
+
+    /**
+     * Get examenes by patient_id.
+     */
+    public function getExamenesByPatientId($patient_id)
+    {
+        $examenes = Examen::where('id_paciente', $patient_id)->get();
+        return response()->json(['success' => true, 'examenes' => $examenes]);
+    }
 }

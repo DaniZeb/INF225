@@ -63,18 +63,20 @@ class PatientController extends Controller
             'rut' => 'required|integer',
             'rutDigit' => 'required|integer',
         ]);
-    
+
         $patient = Patient::where('rut', $validatedData['rut'])
                           ->where('rutDigit', $validatedData['rutDigit'])
                           ->first();
-    
+
         if ($patient) {
-            // Incluir el nombre y el diagnóstico en la respuesta
+            // Incluir el id, nombre y diagnóstico en la respuesta
             return response()->json([
                 'success' => true, 
-                'patient' => $patient,
-                'name' => $patient->name, // Asegúrate de que 'name' es el nombre correcto del campo en la base de datos
-                'diagnostico' => $patient->diagnostico
+                'patient' => [
+                    'id' => $patient->id,
+                    'name' => $patient->name,
+                    'diagnostico' => $patient->diagnostico,
+                ]
             ]);
         } else {
             return response()->json(['success' => false, 'message' => 'Paciente no encontrado.']);
