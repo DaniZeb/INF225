@@ -7,21 +7,18 @@ use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
-    // Display a listing of the resource.
     public function index()
     {
-        $patients = Patient::all();
-        return response()->json($patients);
+        return Patient::all();
     }
 
-    // Store a newly created resource in storage.
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'rut' => 'required|integer',
+            'rut' => 'required|integer|unique:patients,rut',
             'rutDigit' => 'required|integer',
             'name' => 'required|string|max:255',
-            'diagnostico' => 'required|string',
+            'diagnostico' => 'required|string|max:255',
         ]);
 
         $patient = Patient::create($validatedData);
@@ -29,17 +26,15 @@ class PatientController extends Controller
         return response()->json($patient, 201);
     }
 
-    // Display the specified resource.
     public function show(Patient $patient)
     {
-        return response()->json($patient);
+        return $patient;
     }
 
-    // Update the specified resource in storage.
     public function update(Request $request, Patient $patient)
     {
         $validatedData = $request->validate([
-            'rut' => 'required|integer',
+            'rut' => 'required|integer|unique:patients,rut,'.$patient->id,
             'rutDigit' => 'required|integer',
             'name' => 'required|string|max:255',
             'diagnostico' => 'required|string|max:255',
@@ -47,16 +42,16 @@ class PatientController extends Controller
 
         $patient->update($validatedData);
 
-        return response()->json($patient);
+        return response()->json($patient, 200);
     }
 
-    // Remove the specified resource from storage.
     public function destroy(Patient $patient)
     {
         $patient->delete();
 
         return response()->json(null, 204);
     }
+
     public function search(Request $request)
     {
         $validatedData = $request->validate([
@@ -69,20 +64,20 @@ class PatientController extends Controller
                           ->first();
 
         if ($patient) {
-            // Incluir el id, nombre y diagnóstico en la respuesta
-            return response()->json([
-                'success' => true, 
-                'patient' => [
-                    'id' => $patient->id,
-                    'name' => $patient->name,
-                    'diagnostico' => $patient->diagnostico,
-                ]
-            ]);
+            return response()->json(['success' => true, 'patient' => $patient]);
         } else {
             return response()->json(['success' => false, 'message' => 'Paciente no encontrado.']);
         }
     }
 
+    public function touch(Patient $patient)
+    {
+        try {
+            $patient->touch(); 
+            return response()->json($patient, 200);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error al actualizar el paciente. Detalles: ' . $e->getMessage()], 500);
+        }
+    }
     
 }
-

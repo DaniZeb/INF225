@@ -17,5 +17,9 @@ Route::resource('/examenes', ExamenController::class);
 Route::get('/examenes/patient/{patient_id}', [ExamenController::class, 'getExamenesByPatientId']);
 Route::apiResource('/reservas', ReservaController::class);
 Route::apiResource('/users', UserController::class);
-Route::apiResource('unidad-rxes', UnidadRxController::class);
+Route::apiResource('/unidad-rxes', UnidadRxController::class);
+Route::apiResource('patients', PatientController::class);
+Route::post('/patients/{patient}/touch', [PatientController::class, 'touch']);
+Route::post('/users/search', [UserController::class, 'search']);
+Route::put('/users/{user}', [UserController::class, 'update']);
 
