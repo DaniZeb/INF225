@@ -40,7 +40,7 @@ class ReservaController extends Controller
     {
         $validatedData = $request->validate([
             'fecha_reserva' => 'required|date',
-            // Otros campos de reserva que desees validar o actualizar
+            'hora' => 'required|date_format:H:i'
         ]);
 
         // Actualizar reserva
