@@ -19,7 +19,8 @@ class ReservaController extends Controller
                 'id_paciente' => 'required|exists:patients,id',
                 'id_unidad' => 'required|exists:unidad_rxes,id',
                 'fecha_reserva' => 'required|date',
-                'hora' => 'required|date_format:H:i', // Asegúrate del formato correcto para hora (HH:MM)
+                'hora' => ['required', 'regex:/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/']
+                //'hora' => 'required', // Asegúrate del formato correcto para hora (HH:MM)
             ]);
     
             $reserva = Reserva::create($request->all());
