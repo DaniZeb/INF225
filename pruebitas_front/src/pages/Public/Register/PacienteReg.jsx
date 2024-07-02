@@ -84,7 +84,7 @@ function LoginFunc({ onLogin, onError }) {
   />
 </div>
                   <div>
-                      <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-blue-300">Contraseña</label>
+                      <p for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-blue-300">Contraseña</p>
                       <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-200 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-300 dark:border-gray-100 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-100 dark:focus:border-blue-200" required=""/>
                   </div>
                   <div class="flex items-center justify-between">
@@ -93,7 +93,7 @@ function LoginFunc({ onLogin, onError }) {
                             <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-200" required=""/>
                           </div>
                           <div class="ml-3 text-sm">
-                            <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
+                            <p for="remember" class="text-gray-500 dark:text-gray-300">Remember me</p>
                           </div>
                           
                       </div>
