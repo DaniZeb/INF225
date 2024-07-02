@@ -49,10 +49,12 @@ const Catalogo = () => {
             isFlipped={isFlipped}
           >
      
-            <div
-              className="card border border-solid cursor-pointer group-hover:rotate-y-180 duration-500 border-opacity-50 p-4  shadow-xl bg-white rounded-lg overflow-hidden block m-4"
+            <button
+              className="card border border-solid cursor-pointer group-hover:rotate-y-180 duration-500 border-opacity-50 p-4 shadow-xl bg-white rounded-lg overflow-hidden block m-4"
               onClick={() => flipCard(index)}
-            >
+              style={{ all: 'unset' }}
+              aria-label={`Flip card ${index}`}
+            ></button>
               <img
                 src={vehiculo.image}
                 alt={`${vehiculo.brand} - ${vehiculo.model}`}
