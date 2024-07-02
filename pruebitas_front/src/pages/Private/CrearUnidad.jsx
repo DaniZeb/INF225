@@ -46,7 +46,7 @@ const CrearUnidad = () => {
         <div className="bg-orange-200 rounded-lg shadow-xl p-6 mt-4 w-full max-w-lg dark:bg-gray-50 dark:border-gray-50">
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2">Nombre del Área:</label>
+              <p className="block text-gray-700 font-bold mb-2">Nombre del Área:</p>
               <input
                 type="text"
                 value={nombre}
