@@ -223,7 +223,7 @@ const EEReserva = () => {
         </h1>
         <div className="bg-orange-200 rounded-lg shadow-xl p-6 mt-4 w-full max-w-lg dark:bg-gray-50 dark:border-gray-50">
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">RUT:</label>
+            <p className="block text-gray-700 font-bold mb-2">RUT:</p>
             <input
               type="text"
               value={rut}
@@ -233,7 +233,7 @@ const EEReserva = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Dígito Verificador:</label>
+            <p className="block text-gray-700 font-bold mb-2">Dígito Verificador:</p>
             <input
               type="text"
               value={dv}
@@ -276,7 +276,7 @@ const EEReserva = () => {
                   />
                   <label htmlFor={selectedReserva.id} className="ml-2">{selectedReserva.fecha_reserva} {selectedReserva.hora}</label>
                   <div className="ml-4">
-                    <label className="block text-gray-700 font-bold mb-2">Nueva Fecha:</label>
+                    <p className="block text-gray-700 font-bold mb-2">Nueva Fecha:</p>
                     <input
                       type="date"
                       value={newFechaReserva}
@@ -284,7 +284,7 @@ const EEReserva = () => {
                       className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       required
                     />
-                    <label className="block text-gray-700 font-bold mb-2 mt-2">Nueva Hora:</label>
+                    <p className="block text-gray-700 font-bold mb-2 mt-2">Nueva Hora:</p>
                     <input
                       type="time"
                       value={newHoraReserva}
