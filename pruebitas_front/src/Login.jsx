@@ -45,7 +45,7 @@ function Login({ onLogin, onError }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <label>Contraseña:</label>
+      <p>Contraseña:</p>
       <input
         type="password"
         value={password}
