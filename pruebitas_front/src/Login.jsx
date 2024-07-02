@@ -39,7 +39,7 @@ function Login({ onLogin, onError }) {
   return (
     <div className="container">
       <h2>Iniciar Sesión</h2>
-      <label>Email:</label>
+      <p>Email:</p>
       <input
         type="email"
         value={email}
