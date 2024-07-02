@@ -38,7 +38,7 @@ const Buscador = () => {
   return (
     <form className='w-[270px] relative'>
       <div className="flex items-center my-10 ">
-        <div onClick={handlebus} role="menu" className='block items center cursor-pointer mx-7'>
+        <div onClick={handlebus} className='block items center cursor-pointer mx-7'>
           {buscq ? <AiOutlineClose size={20} /> : <AiOutlineSearch size={20} />}
         </div>
 
