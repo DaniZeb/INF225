@@ -73,7 +73,7 @@ const Catalogo = () => {
 
             <div
               className="card card-back border border-solid cursor-pointer group-hover:rotate-y-180 duration-500 border-opacity-50 p-4  shadow-xl bg-white rounded-lg overflow-hidden block m-4"
-              onClick={() => flipCard(index)}
+              onClick={() => flipCard()}
             >
               <p className="text-sm mt-2"> Marca: {vehiculo.brand}</p>
               <p className="text-sm mt-2"> Modelo: {vehiculo.model}</p>
