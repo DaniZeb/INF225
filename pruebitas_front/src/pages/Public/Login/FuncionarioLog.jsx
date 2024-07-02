@@ -45,7 +45,7 @@ const FuncionarioLog = () => {
         <h1 className="text-xl font-bold text-gray-900 mb-4">Inicio de Sesión</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Email:</label>
+            <p className="block text-gray-700 font-bold mb-2">Email:</p>
             <input
               type="email"
               value={email}
@@ -55,7 +55,7 @@ const FuncionarioLog = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">Contraseña:</label>
+            <p className="block text-gray-700 font-bold mb-2">Contraseña:</p>
             <input
               type="password"
               value={password}
