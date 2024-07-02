@@ -121,7 +121,7 @@ const Reserva = () => {
         <div className="bg-orange-200 rounded-lg shadow-xl p-6 mt-4 w-full max-w-lg dark:bg-gray-50 dark:border-gray-50">
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2">Fecha de la Reserva:</label>
+              <p className="block text-gray-700 font-bold mb-2">Fecha de la Reserva:</p>
               <input
                 type="date"
                 value={fecha}
@@ -131,7 +131,7 @@ const Reserva = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2">Hora de la Reserva:</label>
+              <p className="block text-gray-700 font-bold mb-2">Hora de la Reserva:</p>
               <input
                 type="time"
                 value={hora_reserva}
@@ -141,7 +141,7 @@ const Reserva = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2">RUT:</label>
+              <p className="block text-gray-700 font-bold mb-2">RUT:</p>
               <input
                 type="text"
                 value={rut}
@@ -151,7 +151,7 @@ const Reserva = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2">Dígito Verificador:</label>
+              <p className="block text-gray-700 font-bold mb-2">Dígito Verificador:</p>
               <input
                 type="text"
                 value={dv}
@@ -161,7 +161,7 @@ const Reserva = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2">Nombre del Paciente:</label>
+              <p className="block text-gray-700 font-bold mb-2">Nombre del Paciente:</p>
               <input
                 type="text"
                 value={nombre}
@@ -171,7 +171,7 @@ const Reserva = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 font-bold mb-2">Diagnóstico:</label>
+              <p className="block text-gray-700 font-bold mb-2">Diagnóstico:</p>
               <input
                 type="text"
                 value={diagnostico}
