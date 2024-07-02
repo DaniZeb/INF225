@@ -43,7 +43,7 @@ const Navbar = () => {
       </ul>
 
 
-      <div className="md:hidden cursor-pointer relative z-10" onClick={toggleMenu}>
+      <button className="md:hidden cursor-pointer relative z-10" onClick={toggleMenu}></button>
         {menuOpen ? <AiOutlineClose className="w-6 h-6" /> : <AiOutlineMenu className="w-6 h-6" />}
       </div>
 
