@@ -114,5 +114,24 @@ class UserController extends Controller
             return response()->json(['message' => 'Usuario no encontrado.'], 404);
         }
     }
+    public function login(Request $request)
+    {
+    $request->validate([
+        'rut' => 'required|string',
+        'rutDigit' => 'required|string',
+        'password' => 'required|string',
+    ]);
+
+    $user = User::where('rut', $request->rut)
+                ->where('rutDigit', $request->rutDigit)
+                ->first();
+
+    if (!$user || !Hash::check($request->password, $user->password)) {
+        return response()->json(['message' => 'Credenciales incorrectas.'], 401);
+    }
+
+    return response()->json(['user' => $user]);
+    }   
+
 
 }
