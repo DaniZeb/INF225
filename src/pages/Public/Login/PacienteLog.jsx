@@ -5,6 +5,7 @@ import { UserRoundPlus, ArrowBigRightDash} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 function LoginPac({ onLogin, onError }) {
+  console.log('LoginPac props:', { onLogin, onError });
   const [navbarBackground, setNavbarBackground] = useState(false);
 
   useEffect(() => {
