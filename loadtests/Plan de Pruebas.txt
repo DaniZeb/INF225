@@ -1,8 +1,0 @@
-Prueba 1: Simulación de 100 usuarios “bombardeando” el endpoint de “reservas” creando reservas, 
-en un plazo de 10 segundos y se espera que la API responda en tiempo relativamente constante de 1 segundo
-
-Prueba 2: Simulación de 100 usuarios “bombardeando” el endpoint “reservas” eliminando reservas, 
-en un plazo de 10 segundos, se espera que la API responda en tiempo relativamente constante de 1 segundo
-
-Prueba 3: Simulación de 100 usuarios “bombardeando” el endpoint “search” buscando usuarios, 
-en un plazo de 10 segundos, se espera que la API responda en tiempo relativamente constante de 1 segundo
